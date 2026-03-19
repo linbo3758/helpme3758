@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>我的酷网站</title>
+  <style>
+    /* 页面全屏背景 */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 背景动画 */
+    @keyframes gradientBG {
+      0% {background-position:0% 50%;}
+      50% {background-position:100% 50%;}
+      100% {background-position:0% 50%;}
+    }
+
+    /* 输入框样式 */
+    #myInput {
+      padding: 10px 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid #fff;
+      outline: none;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    #myInput:focus {
+      border-color: #ff6f61;
+      box-shadow: 0 6px 15px rgba(255,111,97,0.4);
+    }
+
+    /* 显示你输入的文字 */
+    #displayText {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    }
+
+    /* 容器垂直排列 */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" id="myInput" placeholder="在这里输入文字...">
+    <div id="displayText">你输入的文字会显示在这里</div>
+  </div>
+
+  <script>
+    // 获取输入框和显示区域
+    const input = document.getElementById('myInput');
+    const display = document.getElementById('displayText');
+
+    // 实时显示输入内容
+    input.addEventListener('input', function() {
+      display.textContent = input.value || '你输入的文字会显示在这里';
+    });
+  </script>
+</body>
+</html>
