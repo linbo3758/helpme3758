@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card-container {
+      perspective: 1000px;
+    }
+
+    .card {
+      width: 500px;
+      min-height: 250px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      word-wrap: break-word;
+    }
+
+    .card.flip {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .next-btn {
+      margin-top: 20px;
+      padding: 12px 30px;
+      background-color: #cfe8ff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .next-btn:hover {
+      background-color: #b7dcff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card-container">
+    <div class="card" onclick="flipCard()">
+      <div class="card-face front" id="question"></div>
+      <div class="card-face back" id="answer"></div>
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="nextCard()">Next</button>
+
+  <script>
+    const flashcards = [
+      {
+        question: "What is the structure of an atom?",
+        answer: "An atom consists of a nucleus (protons + neutrons) and electrons surrounding it."
+      },
+      {
+        question: "Explain covalent bonding in detail. Why do atoms share electrons instead of transferring them?",
+        answer: "Covalent bonding occurs when atoms share electrons to achieve a full outer shell. This usually happens between non-metals where electronegativity differences are small."
+      },
+      {
+        question: "Long question example: Explain why increasing temperature increases reaction rate, including collision theory and energy distribution.",
+        answer: "Higher temperature means particles move faster, leading to more frequent and more energetic collisions. A greater proportion of particles exceed activation energy."
+      }
+    ];
+
+    let currentIndex = 0;
+    let flipped = false;
+
+    function updateCard() {
+      document.getElementById("question").innerText = flashcards[currentIndex].question;
+      document.getElementById("answer").innerText = flashcards[currentIndex].answer;
+      document.querySelector(".card").classList.remove("flip");
+      flipped = false;
+    }
+
+    function flipCard() {
+      document.querySelector(".card").classList.toggle("flip");
+      flipped = !flipped;
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % flashcards.length;
+      updateCard();
+    }
+
+    updateCard();
+  </script>
+
+</body>
+</html>
