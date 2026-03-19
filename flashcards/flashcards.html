@@ -4,13 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flashcards</title>
+  <!-- 引用同文件夹里的 CSS -->
   <link rel="stylesheet" href="flashcards.css">
 </head>
 <body>
+  <h1 style="text-align:center; margin-bottom:20px;">My Flashcards</h1>
+
+  <!-- 卡片容器 -->
   <div class="flashcards-container" id="flashcards-container">
-    <!-- 卡片会通过 JavaScript 动态生成 -->
+    <!-- JS 会动态生成卡片 -->
   </div>
 
+  <!-- 返回主页按钮 -->
+  <div style="text-align:center; margin-top:30px;">
+    <a href="../index.html" style="padding:10px 20px; background-color:#4CAF50; color:white; border-radius:5px; text-decoration:none;">Back to Home</a>
+  </div>
+
+  <!-- 引用同文件夹里的 JS -->
   <script src="flashcards.js"></script>
 </body>
 </html>
