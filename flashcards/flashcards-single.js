@@ -1,6 +1,6 @@
 // 定义你的闪卡数据（Question / Answer）
 const flashcards = [
-  { question: "What is H₂O?", answer: "Water" },
+  { question: "Conflict in society", answer: "Speaker exposes the inequality in society between classes. },
   { question: "Who discovered penicillin?", answer: "Alexander Fleming" },
   { question: "9 x 7?", answer: "63" },
   { question: "Square root of 16?", answer: "4" }
