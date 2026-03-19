@@ -8,7 +8,23 @@ This is a GCSE revision website.
 - Mathematics
 - Further Mathematics
 - English Literature
-<a href="flashcards.html">Flashcards</a>
+<div style="text-align:center; margin-top:50px;">
+  <h2>Poerty Anthology</h2>
+
+  <a href="flashcards.html" 
+     style="
+       display:inline-block;
+       padding:15px 30px;
+       margin:10px;
+       background:#e6f2ff;
+       border-radius:10px;
+       text-decoration:none;
+       color:black;
+       font-family: Verdana;
+     ">
+     FLASHCARDS
+  </a>
+</div>
 - English Language
 - Geography
 - History
