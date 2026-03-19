@@ -3,24 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards</title>
-  <!-- 引用同文件夹里的 CSS -->
+  <title>Flashcards Index</title>
   <link rel="stylesheet" href="flashcards.css">
 </head>
 <body>
-  <h1 style="text-align:center; margin-bottom:20px;">My Flashcards</h1>
+  <h1 style="text-align:center; margin-bottom:20px;">Flashcards Index</h1>
 
-  <!-- 卡片容器 -->
-  <div class="flashcards-container" id="flashcards-container">
-    <!-- JS 会动态生成卡片 -->
+  <!-- 闪卡索引 -->
+  <div style="text-align:center; margin-bottom:30px;">
+    <button onclick="loadSet('chemistry')">Chemistry</button>
+    <button onclick="loadSet('physics')">Physics</button>
+    <button onclick="loadSet('math')">Math</button>
   </div>
 
-  <!-- 返回主页按钮 -->
+  <!-- 卡片显示区 -->
+  <div class="flashcard-single" id="flashcard">
+    <div class="card-inner" id="card-inner">
+      <div class="card-front" id="card-front">Select a set</div>
+      <div class="card-back" id="card-back"></div>
+    </div>
+  </div>
+
+  <!-- 翻转 + 下一张按钮 -->
+  <div style="text-align:center; margin-top:20px;">
+    <button id="flip" style="padding:10px 20px; margin-right:10px;">Flip</button>
+    <button id="next" style="padding:10px 20px;">Next</button>
+  </div>
+
   <div style="text-align:center; margin-top:30px;">
     <a href="../index.html" style="padding:10px 20px; background-color:#4CAF50; color:white; border-radius:5px; text-decoration:none;">Back to Home</a>
   </div>
 
-  <!-- 引用同文件夹里的 JS -->
-  <script src="flashcards.js"></script>
+  <script src="flashcards-single.js"></script>
 </body>
 </html>
