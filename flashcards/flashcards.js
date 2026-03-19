@@ -1,28 +1,42 @@
-// flashcards.js
-const flashcardsContainer = document.getElementById('flashcards-container');
+// flashcards-single.js
 
-// 你的文本数据，这里每条是一个 Q&A
-const flashcardsData = [
-  { question: "What is the chemical symbol for water?", answer: "H₂O" },
-  { question: "Who discovered penicillin?", answer: "Alexander Fleming" },
-  { question: "What is 9 x 7?", answer: "63" },
-  // 可以把你自己的内容放在这里
+const flashcards = [
+  { 
+    question: "Explain how water's molecular structure leads to hydrogen bonding and how that affects its boiling point and surface tension.", 
+    answer: "Water molecules are polar, with a positive hydrogen end and negative oxygen end. This allows hydrogen bonds to form between molecules, increasing boiling point and surface tension." 
+  },
+  { 
+    question: "Describe the process of photosynthesis, including the light-dependent and light-independent reactions.", 
+    answer: "Photosynthesis converts light energy into chemical energy. Light-dependent reactions generate ATP and NADPH, while the Calvin cycle (light-independent) uses them to fix CO₂ into glucose." 
+  },
+  { 
+    question: "Discuss the impact of Newton's second law in understanding acceleration and force in various contexts.", 
+    answer: "Newton's second law states F = ma. It allows us to calculate acceleration from applied force and mass, explaining motion from car engines to falling objects." 
+  }
 ];
 
-flashcardsData.forEach(item => {
-  const card = document.createElement('div');
-  card.className = 'card';
+let currentIndex = 0;
 
-  card.innerHTML = `
-    <div class="card-inner">
-      <div class="card-front">${item.question}</div>
-      <div class="card-back">${item.answer}</div>
-    </div>
-  `;
+const cardInner = document.getElementById("card-inner");
+const cardFront = document.getElementById("card-front");
+const cardBack = document.getElementById("card-back");
 
-  card.addEventListener('click', () => {
-    card.classList.toggle('flipped');
-  });
+function showCard(index) {
+  cardFront.textContent = flashcards[index].question;
+  cardBack.textContent = flashcards[index].answer;
+  cardInner.classList.remove("flipped");
+}
 
-  flashcardsContainer.appendChild(card);
+// 初始化显示第一张
+showCard(currentIndex);
+
+// 翻转按钮
+document.getElementById("flip").addEventListener("click", () => {
+  cardInner.classList.toggle("flipped");
+});
+
+// 下一张按钮
+document.getElementById("next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % flashcards.length;
+  showCard(currentIndex);
 });
