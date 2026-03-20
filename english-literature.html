@@ -9,24 +9,30 @@
       font-family: Arial;
       color: #000;
       background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
       margin: 0;
+      text-align: center;
     }
 
-    a {
-      color: #000;
-      text-decoration: none;
+    h1 {
+      margin-bottom: 30px;
     }
 
-    .section {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
+    h2 {
+      margin-bottom: 15px;
+      margin-top: 40px;
     }
 
     .card-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
+      width: 100%;
+      max-width: 900px;
     }
 
     .card {
@@ -34,6 +40,10 @@
       padding: 18px;
       border-radius: 14px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       transition: 0.2s;
     }
 
@@ -42,48 +52,69 @@
       border: 1px solid #A4D65E;
     }
 
-    .button {
+    .tag {
+      font-size: 12px;
+      background: #eef8e6;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 12px;
       display: inline-block;
-      margin-top: 10px;
-      padding: 6px 12px;
+    }
+
+    .button {
+      margin-top: 12px;
+      padding: 8px 0;
+      width: 22%; /* 长条按钮 */
       border-radius: 8px;
       background: #A4D65E;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    a.back-btn {
+      margin-top: 30px;
+      text-decoration: none;
+      color: #000;
+      font-size: 14px;
     }
   </style>
 </head>
 
 <body>
 
-<div class="section">
-  <h1>English Literature</h1>
-  <a href="index.html">← Back to Home</a>
-</div>
+<h1>English Literature</h1>
 
-<div class="section">
-  <div class="card-container">
-
-    <div class="card">
-      <h3>Pride and Prejudice</h3>
-      <a href="#" class="button">Open</a>
-    </div>
-
-    <div class="card">
-      <h3>Merchant of Venice</h3>
-      <a href="#" class="button">Open</a>
-    </div>
-
-    <div class="card">
-      <h3>Poetry Anthology</h3>
-      <a href="PA/PoetryAnthology-menu.html" class="button">Open</a>
-    </div>
-
-    <div class="card">
-      <h3>An Inspector Calls</h3>
-      <a href="#" class="button">Open</a>
-    </div>
-
+<!-- Paper 1 -->
+<h2>Paper 1</h2>
+<div class="card-container">
+  <div class="card">
+    <div class="tag">English Literature</div>
+    <h3>Merchant of Venice</h3>
+    <a href="flashcards-merchant-venice.html" class="button">Open</a>
+  </div>
+  <div class="card">
+    <div class="tag">English Literature</div>
+    <h3>An Inspector Calls</h3>
+    <a href="flashcards-inspector-calls.html" class="button">Open</a>
   </div>
 </div>
+
+<!-- Paper 2 -->
+<h2>Paper 2</h2>
+<div class="card-container">
+  <div class="card">
+    <div class="tag">English Literature</div>
+    <h3>Poetry Anthology</h3>
+    <a href="PA/PoetryAnthology-menu.html" class="button">Open</a>
+  </div>
+  <div class="card">
+    <div class="tag">English Literature</div>
+    <h3>Pride and Prejudice</h3>
+    <a href="flashcards-pride-prejudice.html" class="button">Open</a>
+  </div>
+</div>
+
+<a href="index.html" class="back-btn">← Back to Home</a>
 
 </body>
 </html>
