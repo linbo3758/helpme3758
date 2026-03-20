@@ -45,36 +45,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end;
       min-height: 150px;
-      transition: transform 0.2s;
+      transition: border 0.3s, transform 0.2s;
+      position: relative;
     }
 
     .card:hover {
+      border: 2px solid #A4D65E;
       transform: translateY(-5px);
     }
 
     .card h3 {
-      margin: 0;
+      margin: 0 0 10px 0;
       font-size: 18px;
       text-align: center;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .button {
-      margin-top: 10px;
-      padding: 6px 0;
-      width: 40%; /* 初始按钮宽度 */
+      width: 100%;
+      height: calc(150px / 5);  /* 高度 = 1/5 */
+      max-height: 35px;
       border-radius: 8px;
       background: #A4D65E;
       font-size: 14px;
       font-weight: bold;
-      transition: all 0.2s;
       text-align: center;
-    }
-
-    .card:hover .button {
-      width: 100%;      /* hover 时占满卡片宽度 */
-      padding: 25px 0;  /* 高度约占卡片的1/5~1/6 */
+      line-height: calc(150px / 5);
+      position: absolute;
+      bottom: 0;
+      left: 0;
     }
 
     a.back-btn {
