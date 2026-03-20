@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>English Literature</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      color: #000;
+      background: #ffffff;
+      margin: 0;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f9fafb;
+      padding: 18px;
+      border-radius: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border: 1px solid #A4D65E;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #A4D65E;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="section">
+  <h1>English Literature</h1>
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<div class="section">
+  <div class="card-container">
+
+    <div class="card">
+      <h3>Pride and Prejudice</h3>
+      <a href="#" class="button">Open</a>
+    </div>
+
+    <div class="card">
+      <h3>Merchant of Venice</h3>
+      <a href="#" class="button">Open</a>
+    </div>
+
+    <div class="card">
+      <h3>Poetry Anthology</h3>
+      <a href="PA/PoetryAnthology-menu.html" class="button">Open</a>
+    </div>
+
+    <div class="card">
+      <h3>An Inspector Calls</h3>
+      <a href="#" class="button">Open</a>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
