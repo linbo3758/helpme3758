@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flashcards</title>
+
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      width: 620px;
+      max-width: 90%;
+      min-height: 300px;
+      padding: 30px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+
+      line-height: 1.7;
+      letter-spacing: 0.6px;
+
+      white-space: pre-wrap;
+      word-break: break-word;
+      text-align: center;
+    }
+
+    .card.flip {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      backface-visibility: hidden;
+      width: 100%;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    .next-btn {
+      margin-top: 25px;
+      padding: 14px 35px;
+      background-color: #cfe8ff;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .next-btn:hover {
+      background-color: #b7dcff;
+    }
+
+    .back-btn {
+      margin-top: 15px;
+      text-decoration: none;
+      color: gray;
+      font-size: 13px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Poison Tree Flashcards</h1>
+
+  <div class="card-container">
+    <div class="card" onclick="flipCard()">
+      <div class="card-face front" id="question"></div>
+      <div class="card-face back" id="answer"></div>
+    </div>
+  </div>
+
+  <button class="next-btn" onclick="nextCard()">Next</button>
+
+  <a class="back-btn" href="/helpme3758/">← Back to Home</a>
+
+  <script>
+    const flashcards = [
+
+{
+  question: "I can talk posh like sone / With an 'Olly in my mouth",
+  answer: "• The speaker CAN talk posh if they wish, showing they can choose what they behave like. Choosing not to they assert pride in their working-class identity.<br>• 'Olly metaphorically associated with wealth and luxury. But putting marble in their mouth suggest an idea of forcing, as the speech is performative. Speaker critiques middle-class pretension and suggest the social differences are superficial and artificial."
+},
+      
+{
+  question: "Have I a label on me head, and another on me bum?",
+  answer: "• Comical language creates a playground atmosphere, suggesting judging people by their background is immature.<br>• Humorous exaggeration - absurdity<br>• The imagery of physical labelling people on their body part, suggest tagging people (fix people into their categories) is dehumanizing them. Also encourages people to think about figurative class label."
+},
+      
+{
+  question: "Structure",
+  answer: "• One-sided question and answer structure.<br>• Rhetorical questions build up tension.<br>• 'How can you tell what class I am from?' is a much easier question to answer in comparison of 'why do you care what class I am from?', suggest there is no reason the speaker's class matters.<br>• And a powerful conclusion at the end."
+},
+      
+{
+  question: "A cleaner is me mother / A docker is me brother",
+  answer: "• Exaggerating the contrast by dark and light visual comparison of how different society view two classes.<br>• Judgement based on visible signs (mark) of class, not character.<br>• 'lily-white' linked to purity and fragility, expose how the higher social classes benefits from not doing manual work and been protected."
+},
+      
+{
+  question: "Conflict in society",
+  answer: "• Speaker exposes the inequality in society between classes. Confronts someone from higher social class and challenges the assumption they have about people from working class.<br>• Contrasts and exaggeration of class stereotypes emphasize the distance between these classes, making the divide seem even wider. By mocking these stereotypes, the speaker argues both classes share the same humanity, the differences are constructed, not real."
+},
+      
+{
+  question: "Identity",
+  answer: "• The speaker uses slangs (bog, Tara) and Liverpudlian dialect (corpy and wet nelly). Shows they identify as part of Liverpudlian working class and they are proud of their identity.<br>• The rhetorical question and confrontational tone heighten tension and reveal her frustration. The lack of answers shows she ultimately refuses to care about other's judgment and condensed into the final line."
+},
+      
+{
+  question: "Context",
+  answer: "• Liverpool grew as a major port city in 18-19th centuries. Its economy depended heavily on dock workers, sailor and labour, who were low-paid and worked in unstable jobs.<br>• 1911 transport strike, Trade Union have traditionally been very powerful in the city, this activism further reinforced Liverpool's working-class identity."
+},
+      
+{
+  question: "Or is it because my hands are stained with toil? / Instead of soft lily-white with perfume and oil?",
+  answer: "• Unapologetic pride<br>• Anaphora, sounds formal introduction as she is reclaiming her identity.<br>• Humanising, they have real human relationships, contrast with dehumanising them (label).<br>• Cleaner and dockers are typical working class jobs, 'mother' and 'brother' reflects how working class is like a collective family. Echoes Trade Union unity, a powerful idea in working-class culture — suggesting they stand together and support each other against class prejudice."
+}
+
+    ];
+
+    let currentIndex = 0;
+
+    function updateCard() {
+      document.getElementById("question").innerText = flashcards[currentIndex].question;
+      document.getElementById("answer").innerText = flashcards[currentIndex].answer;
+      document.querySelector(".card").classList.remove("flip");
+    }
+
+    function flipCard() {
+      document.querySelector(".card").classList.toggle("flip");
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % flashcards.length;
+      updateCard();
+    }
+
+    updateCard();
+  </script>
+
+</body>
+</html>
