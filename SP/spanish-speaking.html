@@ -1,1 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanish | Help me 3758</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+      background: #ffffff;
+      color: #1e293b;
+      padding: 2rem 1.5rem;
+    }
+
+    .section {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    .hero {
+      border-bottom: 2px solid #eef2f6;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      color: #A4D65E;
+      font-weight: 800;
+    }
+
+    .hero p {
+      color: #475569;
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #A4D65E;
+      padding-left: 0.6rem;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 1.5rem 0 0.5rem;
+      color: #334155;
+    }
+
+    /* 固定布局（关键） */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #f9fafb;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1rem 1rem;
+      border: 1px solid #e9edf2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 160px;
+      text-align: center;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      border: 2px solid #A4D65E;
+      transform: translateY(-2px);
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .button {
+      background: #A4D65E;
+      border-radius: 40px;
+      padding: 0.6rem;
+      text-decoration: none;
+      font-weight: 700;
+      color: #1e3a2f;
+      font-size: 0.9rem;
+    }
+
+    .button:hover {
+      background: #8bc34a;
+    }
+
+    /* 手机适配 */
+    @media (max-width: 700px) {
+      .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="section hero">
+    <h1>Speaking</h1>
+    <p>AQA Spanish</p>
+  </div>
+
+
+  <div class="section">
+
+ <div class="card">
+        <h4>Overview</h4>
+        <a href="SP/speaking-overview" class="button">Open</a>
+      </div>
+    
+    <div class="grid-2">
+      <div class="card">
+        <h4>Prompts</h4>
+        <a href="SP/speaking-prompts.html" class="button">Open</a>
+      </div>
+
+      <div class="card">
+        <h4>Modal Answers + Audio</h4>
+        <a href="SP/speaking-modalanswers-audio.html" class="button">Open</a>
+      </div>
+
+     
+
+
+      </div>
+    </div>
+  </div>
