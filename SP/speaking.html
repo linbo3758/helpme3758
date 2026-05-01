@@ -98,6 +98,8 @@
       font-weight: 700;
       color: #1e3a2f;
       font-size: 0.9rem;
+      display: inline-block;
+      transition: background 0.2s ease;
     }
 
     .button:hover {
@@ -117,6 +119,18 @@
       }
     }
 
+    /* 添加分隔辅助样式：让上下两组卡片有明显的视觉区分 */
+    .card-group {
+      margin-bottom: 2rem;
+    }
+
+    .card-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-spacer {
+      margin-top: 1rem;
+    }
   </style>
 </head>
 
@@ -127,22 +141,33 @@
     <p>AQA Spanish</p>
   </div>
 
-
+  <!-- 主要卡片区域：采用上下结构，完全分离 'Overview' 卡片 与 下方双卡片 -->
   <div class="section">
 
- <div class="card">
+    <!-- 第一组：独立 Overview 卡片（占据完整宽度，干净分离） -->
+    <div class="card-group">
+      <div class="card" style="width: 100%; min-width: 0; margin-bottom: 0;">
         <h4>Overview</h4>
         <a href="SP/speaking-overview" class="button">Open</a>
       </div>
-    
-  <div class="grid-2" style="margin-top: 1.5rem;">
-    <div class="card">
-      <h4>Prompts</h4>
-      <a href="SP/speaking-prompts.html" class="button">Open</a>
     </div>
-    <div class="card">
-      <h4>Modal Answers + Audio</h4>
-      <a href="SP/speaking-modalanswers-audio.html" class="button">Open</a>
+
+    <!-- 第二组：两个卡片（Prompts 和 Modal Answers + Audio）采用 grid-2 布局，和上方完全分离 -->
+    <div class="card-group section-spacer">
+      <div class="grid-2" style="margin-top: 0;">
+        <div class="card">
+          <h4>Prompts</h4>
+          <a href="SP/speaking-prompts.html" class="button">Open</a>
+        </div>
+        <div class="card">
+          <h4>Modal Answers + Audio</h4>
+          <a href="SP/speaking-modalanswers-audio.html" class="button">Open</a>
+        </div>
+      </div>
     </div>
+
   </div>
-</div>
+
+  <!-- 如果希望保持页面完整性且留有额外说明，此处不再添加额外元素，布局已完全分隔 -->
+</body>
+</html>
